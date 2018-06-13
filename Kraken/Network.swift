@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public struct Network {
     
@@ -123,11 +124,12 @@ public struct Network {
                 throw KrakenError.errorAPI(reason: "Error encoding signature")
         }
         
-        let message = digest.SHA256()
+        let message = digest.sha256()
         let messagePath = encodedPath + message
         
-        let signature = HMAC.sign(data: messagePath, algorithm: HMAC.Algorithm.sha512, key: decodedSecret)
-        return signature.base64EncodedString()
+        let signature = try HMAC(key: decodedSecret.bytes, variant: .sha512).authenticate(messagePath.bytes)
+        
+        return Data(signature).base64EncodedString()
     }
     
     private func addNonce(to params: [String : String]?) -> [String: String] {

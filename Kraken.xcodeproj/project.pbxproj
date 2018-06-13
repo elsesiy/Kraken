@@ -6,21 +6,6 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0AE0B90D1F2E1FE400678F96 /* CommonCryptoModuleMap */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 0AE0B90E1F2E1FE400678F96 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
-			buildPhases = (
-				0AE0B9111F2E1FFE00678F96 /* ShellScript */,
-				0AC741911F386827000CC663 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = CommonCryptoModuleMap;
-			productName = CommonCryptoModuleMap;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		0A6177BE1F2934F7000554B1 /* Kraken.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6177B01F2934F7000554B1 /* Kraken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A6177D91F2935DD000554B1 /* Kraken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6177C71F29350C000554B1 /* Kraken.swift */; };
@@ -28,18 +13,7 @@
 		0A6177DB1F2935EA000554B1 /* Kraken.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0A6177C71F29350C000554B1 /* Kraken.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A6177DC1F2935F2000554B1 /* Network.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0A6177C81F29350C000554B1 /* Network.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AC741901F385DB0000CC663 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC7418F1F385DB0000CC663 /* Utils.swift */; };
-		0AE0B9031F2E1C0600678F96 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0B9021F2E1C0600678F96 /* Crypto.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0AC741931F3A470E000CC663 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0A6177A41F2934F7000554B1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0AE0B90D1F2E1FE400678F96;
-			remoteInfo = CommonCryptoModuleMap;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A6177AD1F2934F7000554B1 /* Kraken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kraken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +24,6 @@
 		0A6177C71F29350C000554B1 /* Kraken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kraken.swift; sourceTree = "<group>"; };
 		0A6177C81F29350C000554B1 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		0AC7418F1F385DB0000CC663 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		0AE0B9021F2E1C0600678F96 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 		0AE0B9051F2E1C8C00678F96 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -90,7 +63,6 @@
 				0A6177C81F29350C000554B1 /* Network.swift */,
 				0A6177B01F2934F7000554B1 /* Kraken.h */,
 				0A6177B11F2934F7000554B1 /* Info.plist */,
-				0AE0B9021F2E1C0600678F96 /* Crypto.swift */,
 				0AC7418F1F385DB0000CC663 /* Utils.swift */,
 			);
 			path = Kraken;
@@ -141,7 +113,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0AC741941F3A470E000CC663 /* PBXTargetDependency */,
 			);
 			name = Kraken;
 			productName = Kraken;
@@ -162,9 +133,6 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 					};
-					0AE0B90D1F2E1FE400678F96 = {
-						CreatedOnToolsVersion = 9.0;
-					};
 				};
 			};
 			buildConfigurationList = 0A6177A71F2934F7000554B1 /* Build configuration list for PBXProject "Kraken" */;
@@ -180,7 +148,6 @@
 			projectRoot = "";
 			targets = (
 				0A6177AC1F2934F7000554B1 /* Kraken */,
-				0AE0B90D1F2E1FE400678F96 /* CommonCryptoModuleMap */,
 			);
 		};
 /* End PBXProject section */
@@ -195,41 +162,11 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0AC741911F386827000CC663 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		0AE0B9111F2E1FFE00678F96 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "mkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0A6177A81F2934F7000554B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AE0B9031F2E1C0600678F96 /* Crypto.swift in Sources */,
 				0A6177DA1F2935DF000554B1 /* Network.swift in Sources */,
 				0A6177D91F2935DD000554B1 /* Kraken.swift in Sources */,
 				0AC741901F385DB0000CC663 /* Utils.swift in Sources */,
@@ -237,14 +174,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0AC741941F3A470E000CC663 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0AE0B90D1F2E1FE400678F96 /* CommonCryptoModuleMap */;
-			targetProxy = 0AC741931F3A470E000CC663 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0A6177BF1F2934F7000554B1 /* Debug */ = {
@@ -370,10 +299,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
-				);
 				INFOPLIST_FILE = Kraken/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -398,10 +323,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap",
-				);
 				INFOPLIST_FILE = Kraken/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -412,24 +333,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		0AE0B90F1F2E1FE400678F96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 9HX8L3BY3M;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0AE0B9101F2E1FE400678F96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 9HX8L3BY3M;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -450,15 +353,6 @@
 			buildConfigurations = (
 				0A6177C21F2934F7000554B1 /* Debug */,
 				0A6177C31F2934F7000554B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0AE0B90E1F2E1FE400678F96 /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0AE0B90F1F2E1FE400678F96 /* Debug */,
-				0AE0B9101F2E1FE400678F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

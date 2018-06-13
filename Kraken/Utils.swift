@@ -16,7 +16,7 @@ public enum KrakenError: Error {
 public enum Result<Value> {
     case success(Value)
     case failure(Error)
-
+    
     public func dematerialize() throws -> Value {
         switch self {
         case let .success(value):
@@ -25,17 +25,17 @@ public enum Result<Value> {
             throw error
         }
     }
-
+    
     public func map<U>(_ transform: (Value) -> U) -> Result<U> {
         return flatMap { .success(transform($0)) }
     }
-
+    
     public func flatMap<U>(_ transform: (Value) -> Result<U>) -> Result<U> {
         return analysis(
             ifSuccess: transform,
             ifFailure: Result<U>.failure)
     }
-
+    
     public func analysis<Result>(ifSuccess: (Value) -> Result, ifFailure: (Error) -> Result) -> Result {
         switch self {
         case let .success(value):
@@ -44,7 +44,7 @@ public enum Result<Value> {
             return ifFailure(value)
         }
     }
-
+    
 }
 
 extension Sequence where Iterator.Element: Equatable {
@@ -69,7 +69,7 @@ extension DataConvertible {
         let data = Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
         return lhs + data
     }
-
+    
     public static func += (lhs: inout Data, rhs: Self) {
         lhs += rhs
     }
@@ -95,7 +95,7 @@ extension Data : DataConvertible {
         var data = Data()
         data.append(lhs)
         data.append(rhs)
-
+        
         return data
     }
 }
