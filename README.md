@@ -14,11 +14,19 @@ This library is a wrapper for the [Kraken Digital Asset Trading Platform](https:
 
 The current version  can be used to query public/private data and make trades. Private data queries and trading functionality require use of your Kraken account API keys.
 
-Kraken Swift was built by [Antonio Casero](@acaserop) 
+Kraken Swift was initially built by [Antonio Casero](@acaserop)
+Heavy modifications have been added by [Jonas-Taha El Sesiy](@elsesiy)
 
 
 ## Installation
 
+### Cocoapods
+
+Just add this dependency to your Podfile:
+
+`pod Kraken`
+
+The transitive dependency to CryptoSwift is added automatically.
 
 ### Carthage
 
