@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Kraken'
-  s.version      = '1.0.0'
+  s.version      = '1.1.0'
   s.summary      = 'Lightweight wrapper for trading cryptocurrencies using Kraken.'
   s.homepage     = 'https://github.com/elsesiy/Kraken'
   s.license      = { :type => 'MIT' }
